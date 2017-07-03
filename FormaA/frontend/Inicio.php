@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-        <script src="js/formulario.js" type="text/javascript"></script>
+        <script src="js/login.js" type="text/javascript"></script>
         <title>Login</title>
     </head>
     <body>
