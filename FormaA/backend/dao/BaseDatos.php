@@ -51,13 +51,14 @@ class BaseDatos {
       `SEXO` VARCHAR(20) DEFAULT NULL,
       `DIRECCION` VARCHAR(70) DEFAULT NULL,
       `TELEFONO` INT(10) DEFAULT NULL,
-      `NIVEL` VARCHAR(20) DEFAULT NULL
+      `NIVEL` VARCHAR(20) DEFAULT NULL,
+      `CONTRASENA` VARCHAR(256) DEFAULT NULL
       PRIMARY KEY (`PERSONA_RUT`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
             $mysqlConexion->exec("
-    INSERT INTO `persona` (`PACIENTE_RUT`, `PACIENTE_NOMCOMPLETO`, `PACIENTE_FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`) VALUES
-    (123456785, 'Juan Perez', '1980-04-28', 'Masculino', 'Santiago', 978464247, 'Paciente')");
+    INSERT INTO `persona` (`PACIENTE_RUT`, `PACIENTE_NOMCOMPLETO`, `PACIENTE_FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
+    (123456785, 'Juan Perez', '1980-04-28', 'Masculino', 'Santiago', 978464247, 'Paciente' , 'pass')");
 
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `medico` (
