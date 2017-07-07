@@ -4,6 +4,19 @@
  *
  * @author Juan
  */
+include_once __DIR__ . "\..\dao\BaseDatos.php";
+include_once __DIR__ . "\..\dao\PersonaDAO.php";
+include_once __DIR__ . "\..\domain\Persona.php";
+
 class PersonaController {
-    //put your code here
+    
+    public static function inicioSesion($rut, $pass){
+        
+        $persona = new Persona();
+        $persona->setPersonaRut($rut);
+        $persona->setContrasena($pass);        
+        $conexion = BaseDatos::getConexion();
+        $daoPersona = new PersonaDAO($conexion);        
+        return $daoPersona->validarPersona($persona);
+    }
 }
