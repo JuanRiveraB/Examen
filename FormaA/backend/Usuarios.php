@@ -7,13 +7,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["rut"]) && isset($_POST["pass"])) {
         $persona = new Persona();
         $rut = $_POST["rut"];
-        $pass = $_POST["pass"];
+        $pass = hash('sha256', $_POST['pass']);
         $persona = PersonaController::inicioSesion($rut, $pass);
         if ($persona->getPersonaRut() === $rut && $persona->getContrasena() === $pass) {
             session_start();
-            $_SESSION['persona'] = $persona;
             $_SESSION['autenticado'] = "SI";
-            $_SESSION['elRut'] = $persona->getPersonaRut();
+            $_SESSION['personaRut'] = $persona->getPersonaRut();
+            $_SESSION['personaNom'] = $persona->getPersonaNom();
+            $_SESSION['nivel'] = $persona->getNivel();
             header("Location: ../frontend/Inicio.php");
             //echo json_encode($persona->jsonSerialize());
         } else {

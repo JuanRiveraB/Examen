@@ -16,4 +16,11 @@ class PersonaController {
         $daoPersona = new PersonaDAO($conexion);        
         return $daoPersona->validarPersona($rut, $pass);
     }
+    
+    public static function buscarPorRut($rut){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoPersona = new PersonaDAO($conexion);        
+        return $daoPersona->buscarRut($rut);
+    }
 }

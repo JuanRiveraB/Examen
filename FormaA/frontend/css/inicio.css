@@ -1,0 +1,43 @@
+/* 
+    Created on : 07-07-2017, 2:24:51
+    Author     : Juan
+*/
+.error {
+    border: 2px solid red;
+    color:red;
+}
+
+.contenedor {
+    width: 65%;
+    overflow: auto;
+    text-align: left;
+}
+
+.Admin{
+    display: none;
+}
+
+.Director{
+    display: none;
+}
+
+.Secretaria{
+    display: none;
+}
+
+.Paciente{
+    display: none;
+}
+
+.nvl{
+    display: none;
+}
+
+.Agendar{
+    display: none;
+}
+
+.cEstado{
+    display: none;
+}
+

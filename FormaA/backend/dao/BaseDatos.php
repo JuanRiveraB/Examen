@@ -58,7 +58,11 @@ class BaseDatos {
 
             $mysqlConexion->exec("
     INSERT INTO `persona` (`PERSONA_RUT`, `PERSONA_NOMCOMPLETO`, `FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
-    (123456785, 'Juan Perez', '1980-04-28', 'Masculino', 'Santiago', 978464247, 'Paciente' , 'pass')");
+    (123456785, 'Juan Perez', '1980-04-28', 'Masculino', '30362306091ef8d489fd8e92de49e5a40f3a2ffb6bda952f178fe394d8492fd9', 978464247, 'Paciente' , 'd74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1')");
+            
+            $mysqlConexion->exec("
+    INSERT INTO `persona` (`PERSONA_RUT`, `PERSONA_NOMCOMPLETO`, `FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
+    (111111111, 'María Perez', '1990-05-15', 'Femenino', '30362306091ef8d489fd8e92de49e5a40f3a2ffb6bda952f178fe394d8492fd9', 971234247, 'Secretaria' , 'd74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1')");
 
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `medico` (
