@@ -12,11 +12,8 @@ class PersonaController {
     
     public static function inicioSesion($rut, $pass){
         
-        $persona = new Persona();
-        $persona->setPersonaRut($rut);
-        $persona->setContrasena($pass);        
         $conexion = BaseDatos::getConexion();
         $daoPersona = new PersonaDAO($conexion);        
-        return $daoPersona->validarPersona($persona);
+        return $daoPersona->validarPersona($rut, $pass);
     }
 }

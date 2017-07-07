@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include "Session.php";?>
+<?php include "/php/Session.php"; ?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -8,10 +8,15 @@
     <body>
         <div id="contenido">
             <header id="top">
+                <a href="php/Salir.php">Cerrar Sessión</a>
             </header>
             <center>
                 <div id="contenedor">
-                    
+                    <?php
+                    if (isset($_SESSION["elRut"])) {
+                        echo $_SESSION["elRut"];
+                    }
+                    ?>
                 </div>
             </center>
             <footer id="bottom">

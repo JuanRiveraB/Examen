@@ -1,31 +1,32 @@
 <?php
+
 /**
  * Description of PersonaDAO
  *
  * @author Juan
  */
 include_once __DIR__ . "\..\domain\Persona.php";
+
 class PersonaDAO {
-    
+
     /**
      *
      * @var PDO
      */
     private $conexion;
-    
+
     public function __construct($conexion) {
         $this->conexion = $conexion;
     }
-    
-     public function validarPersona($persona) {
+
+    public function validarPersona($rut, $pass) {
         $per = new Persona();
-        $query = "SELECT * FROM PERSONA WHERE PERSONA_RUT = :rut AND CONTRASENA = :pass";        
-        $sentencia =  $this->conexion->prepare($query);        
-        $rut = $persona->getPersonaRut();
-        $pass = $persona->getContrasena();
+        $query = 'SELECT * FROM `persona` WHERE  `PERSONA_RUT` = :rut AND `CONTRASENA` =  :pass';
+        $sentencia = $this->conexion->prepare($query);
         $sentencia->bindParam(':rut', $rut);
         $sentencia->bindParam(':pass', $pass);
-        
+        $sentencia->execute();
+
         while ($registro = $sentencia->fetch()) {
             $per->setPersonaRut($registro["0"]);
             $per->setPersonaNom($registro["1"]);
@@ -37,5 +38,5 @@ class PersonaDAO {
             $per->setContrasena($registro["7"]);
         }
         return $per;
-    } 
+    }
 }
