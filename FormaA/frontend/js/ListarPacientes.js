@@ -33,7 +33,7 @@ jQuery(document).ready(function () {
                     html += '<th>Dirección</th>';
                     html += '<th>Teléfono</th></tr>';
                     jQuery.each(Pacientes, function (indice, Persona) {
-                        html += '<tr><td>' + Persona["rutPersona"] + '</td><td>' + Persona["nomPersona"] + '</td><td>' + Persona["fechaNac"] + '</td><td>' + Persona["sexo"] + '</td><td>' + Persona["direccion"] + '</td><td>' + Persona["telefono"] + '</td></tr>';
+                        html += '<tr><td>' + Persona["rutPersona"] + '</td><td>' + Persona["nomPersona"] + '</td><td>' + Persona["fechaNac"] + '</td><td>' + Persona["sexo"] + '</td><td>' + Persona["direccion"] + '</td><td>' + Persona["telefono"]+ '</td></tr>';
                     });
                     html += '</tbody></table>';
                     jQuery('div.ListarPacientes').html(html);

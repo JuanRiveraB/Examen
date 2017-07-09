@@ -88,7 +88,7 @@ class PersonaDAO {
     public function buscarTodosPacientes() {
         $listado = Array();
 
-        $registros = $this->conexion->query("SELECT * FROM PERSONA WHERE NIVEL = 'Paciente'");
+        $registros = $this->conexion->query("SELECT * FROM PERSONA");
 
         $registros->execute();
 
@@ -98,10 +98,10 @@ class PersonaDAO {
             $per->setPersonaNom($registro["1"]);
             $per->setPFechaNaci($registro["2"]);
             $per->setSexo($registro["3"]);
-            $per->setDireccion($registro["4"]);
+            $per->setDireccion(base64_decode($registro["4"]));
             $per->setTelefono($registro["5"]);
             $per->setNivel($registro["6"]);
-            $per->setContrasena($registro["7"]);
+            $per->setContrasena(base64_decode($registro["7"]));
             array_push($listado, $per->jsonSerialize());
         }
         return $listado;
