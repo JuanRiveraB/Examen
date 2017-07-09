@@ -1,0 +1,1 @@
+SELECT count(*),SUM(VALOR_CONSULTA) from atencion join medico on (RUT_MEDICO=Medico_rut);

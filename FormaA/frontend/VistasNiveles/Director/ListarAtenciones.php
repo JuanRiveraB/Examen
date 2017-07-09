@@ -7,8 +7,8 @@
         <link href="../../css/inicio.css" rel="stylesheet" type="text/css"/>
         <script src="../../js/jquery-3.2.1.js" type="text/javascript"></script>
         <script src="../../js/jquery.Rut.js" type="text/javascript"></script>
-        <script src="../../js/ListarPacientes.js" type="text/javascript"></script>
-        <title>Listar Pacientes</title>
+        <script src="../../js/ListarAtenciones.js" type="text/javascript"></script>
+        <title>Listar Atenciones</title>
     </head>
     <body>
         <div id="contenido">
@@ -30,10 +30,10 @@
             <center>
                 <div id="contenedor" class="contenedor">
                     <center>
-                        <label>Consultar por Rut de Paciente o todas(Dejar el texto en blanco): </label><input type="text" id="rutPacienLis" name="rutPacienteL"/>
-                        <button name="ListarPacienSec">Listar Pacientes</button>
+                        <label>Consultar por Numero de atención o todas(Dejar el texto en blanco): </label><input type="text" name="nAtencionL"/>
+                        <button name="Listar">Listar Atenciones</button>
 
-                        <div class="ListarPacientes">
+                        <div class="listarAtenciones">
                         </div>
                     </center>
                 </div>

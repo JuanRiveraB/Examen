@@ -90,7 +90,6 @@ class BaseDatos {
       `RUT_MEDICO` INT(9) NOT NULL,
       `ESTADO` VARCHAR(20) DEFAULT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
-
             $mysqlConexion->exec("
     ALTER TABLE `atencion`
       ADD CONSTRAINT `atencion_pfk` FOREIGN KEY (`RUT_PERSONA`) REFERENCES `persona` (`PERSONA_RUT`) ON UPDATE CASCADE");
@@ -98,6 +97,12 @@ class BaseDatos {
             $mysqlConexion->exec("
     ALTER TABLE `atencion`
       ADD CONSTRAINT `atencion_mfk` FOREIGN KEY (`RUT_MEDICO`) REFERENCES `medico` (`MEDICO_RUT`) ON UPDATE CASCADE");
+            
+            $mysqlConexion->exec("
+    INSERT INTO `atencion` (`FECHA_ATENCION`, `RUT_PERSONA`, `RUT_MEDICO`, `ESTADO`) VALUES 
+    ('2017-08-24', '123456785', '109724041', 'Agendado'), ('2017-07-11', '123456785', '109724041', 'Agendado') "); 
+
+            
 
             return $mysqlConexion;
         } catch (Exception $e) {
