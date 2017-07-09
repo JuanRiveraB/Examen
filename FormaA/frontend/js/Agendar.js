@@ -24,23 +24,23 @@ jQuery(document).ready(function () {
             });
 
     jQuery("input[name='NSecu']").blur(function () {
+        mostrarImagenCargando();
         jQuery.getJSON("/Examen/FormaA/backend/infoAtencion.php",
                 {id: this.value},
                 function (atencion) {
-                    mostrarImagenCargando();
-                    jQuery("input[name='rutPacienteCE']").val(atencion.rutPersona);
+                    jQuery("input[name='rutPacienteCE']").val(atencion[0].rutPersona);
                     jQuery("input[name='rutPacienteCE']").attr("readonly", true);
-                    jQuery("input[name='FechaAtenCE']").val(atencion.fecAtencion);
+                    jQuery("input[name='FechaAtenCE']").val(atencion[0].fecAtencion);
                     jQuery("input[name='FechaAtenCE']").attr("readonly", true);
                     jQuery.getJSON("/Examen/FormaA/backend/infoMedico.php",
-                            {id: atencion.rutMedico},
+                            {id: atencion[0].rutMedico},
                             function (medico) {
                                 jQuery("input[name='rutMedicoCE']").val(medico.rutMedico);
                                 jQuery("input[name='rutMedicoCE']").attr("readonly", true);
                                 jQuery("input[name='MedicoCE']").val(medico.nomMedico);
                                 jQuery("input[name='MedicoCE']").attr("readonly", true);
+                                ocultarImagenCargando();
                             });
-                    ocultarImagenCargando();
                 });
 
     });

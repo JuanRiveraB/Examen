@@ -17,10 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION['personaNom'] = $persona->getPersonaNom();
             $_SESSION['nivel'] = $persona->getNivel();
             header("Location: ../frontend/Inicio.php");
+            exit();
             //echo json_encode($persona->jsonSerialize());
         } else {
             //si no existe se va a login.php con link de error
             header("Location: ../frontend/Login.php?errorusuario=si");
+            exit();
         }
     } else if (isset($_POST["registroRut"]) && isset($_POST["registroNombre"])) {
         //Codigo a registrar

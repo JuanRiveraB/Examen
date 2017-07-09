@@ -10,9 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["id"])) {
         $json = MedicoController::buscarPorRut($_GET["id"]);
         echo $json;
+        exit();
     } else {
         $json = MedicoController::buscarTodos();
         echo $json;
+        exit();
     }
 } else {
     echo "{\"error\": \"Error, solicite ayuda a soporte\"";

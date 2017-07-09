@@ -13,9 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if ($id != "") {
             $json = AtencionController::buscarNumero($id);
             echo $json;
+            exit();
         } else {
             $json = AtencionController::bucarTodas();
             echo $json;
+            exit();
         }
     } else {
         echo "{\"error\": \"Error, solicite ayuda a soporte\"\"}";

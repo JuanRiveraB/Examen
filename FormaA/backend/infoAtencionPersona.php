@@ -14,13 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         if ($id != "" && $id2 != "") {
             $json1 = AtencionController::buscarPorNumeroRut($id, $id2);
             echo $json1;
+            exit();
         }
     }
     if (isset($_GET["id"])) {
         $id = $_GET["id"];
         if ($id != "") {
+            header("Content-type: application/json");
             $json2 = AtencionController::buscarPorRut($id);
             echo $json2;
+            exit();
         }
     }
     echo "{\"error\": \"Error, solicite ayuda a soporte\"\"}";

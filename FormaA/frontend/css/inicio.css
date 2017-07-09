@@ -9,13 +9,16 @@
 
 #cargandoAjax {
     position:absolute;
+    z-index: 3;
+    float: left;
     left: 50%;
-    bottom: 50%;
+    bottom: 70%;
     visibility:hidden;
 }
 
 #cargandoAjax img {
     width: 32px;
+    z-index:1;
 }
 
 html {
@@ -174,6 +177,7 @@ a:hover, a:active, .Salir:hover, .Salir:active, .Inicio:hover, .Inicio:active  {
     background-color: #efefef;
     margin: 30px 10px 10px 10px;
     width: 100%;
+    z-index: -1;
     box-shadow: 0 0.0625rem 0.5625rem #95a5a6;
 }
 
