@@ -63,6 +63,10 @@ class BaseDatos {
             $mysqlConexion->exec("
     INSERT INTO `persona` (`PERSONA_RUT`, `PERSONA_NOMCOMPLETO`, `FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
     (111111111, 'María Perez', '1990-05-15', 'Femenino', 'U2FudGlhZ28=', 971234247, 'Secretaria' , 'cGFzcw==')");
+    
+            $mysqlConexion->exec("
+    INSERT INTO `persona` (`PERSONA_RUT`, `PERSONA_NOMCOMPLETO`, `FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
+    (188335802, 'Karina Andrea', '1994-07-16', 'Femenino', 'U2FudGlhZ28=', 321654987, 'Director' , 'cGFzcw==')");        
 
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `medico` (

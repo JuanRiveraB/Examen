@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         //Codigo a validar de login
         $persona = new Persona();
         $rut = $_POST["rut"];
-        $pass = hash('sha256', $_POST['pass']);
+        $pass = base64_encode($_POST['pass']);
         $persona = PersonaController::inicioSesion($rut, $pass);
         if ($persona->getPersonaRut() === $rut && $persona->getContrasena() === $pass) {
             session_start();
