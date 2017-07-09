@@ -22,4 +22,11 @@ class MedicoController {
         $daoMedico = new MedicoDAO($conexion);        
         return json_encode($daoMedico->buscarTodos());
     }
+    
+    public static function buscarPorRutJson($rut){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoMedico = new MedicoDAO($conexion);        
+        return json_encode($daoMedico->buscarRutMedicoJson($rut));
+    }
 }

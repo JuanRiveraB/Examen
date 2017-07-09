@@ -1,6 +1,6 @@
 <?php
 /**
- * Description of infoPersona
+ * Description of infoMedico
  *
  * @author Juan
  */
