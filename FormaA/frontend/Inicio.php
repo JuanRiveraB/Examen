@@ -20,40 +20,42 @@
                         }
                         ?></label>
                     <input id="nivel" class="nvl" value="
-                        <?php
-                        if (isset($_SESSION["nivel"])) {
-                            echo $_SESSION["nivel"];
-                        }
-                        ?>" />
-                    <a href="php/Salir.php">Cerrar Sessión</a>
+                    <?php
+                    if (isset($_SESSION["nivel"])) {
+                        echo $_SESSION["nivel"];
+                    }
+                    ?>" />
+                    <a class="Inicio" href="Inicio.php">Inicio</a>
+                    <a class="Salir" href="php/Salir.php">Cerrar Sessión</a>
                 </div>
             </header>
             <center>
                 <div id="contenedor" class="contenedor">
-                    <div id="OpAdmin" class="Admin">
-                        <a href="">Opciones Pacientes</a>
-                        <a href="">Opciones Médicos</a>
-                        <a href="">Opciones Usuarios</a>
-                    </div>
-                    <div id="OpDirector" class="Director">
-                        <a href="">Opciones Pacientes</a>
-                        <a href="">Opciones Médicos</a>
-                        <a href="">Opciones Atenciones</a>
-                        <a href="">Consultar Estadísticas</a>
-                    </div>
-                    <div id="OpSecretaria" class="Secretaria">
-                        <a href="">Opciones Pacientes</a>
-                        <a href="">Opciones Médicos</a>
-                        <a href="">Opciones Atenciones</a>
-                        <a href="VistasNiveles/Secretaria/Agendar.php">Agendar, confirmar y anular atenciones</a>
-                    </div>
-                    <div id="OpPaciente" class="Paciente">
-                        <a href="VistasNiveles/Paciente/Atenciones.php">Mis Atenciones</a>
-                    </div>
+                    <center>
+                        <div id="OpAdmin" class="Admin">
+                            <a href="">Opciones Pacientes</a>
+                            <a href="">Opciones Médicos</a>
+                            <a href="">Opciones Usuarios</a>
+                        </div>
+                        <div id="OpDirector" class="Director">
+                            <a href="">Opciones Pacientes</a>
+                            <a href="">Opciones Médicos</a>
+                            <a href="">Opciones Atenciones</a>
+                        </div>
+                        <div id="OpSecretaria" class="Secretaria">
+                            <a href="">Listar Pacientes</a>
+                            <a href="">Listar Médicos</a>
+                            <a href="VistasNiveles/Secretaria/ListarAtenciones.php">Listar Atenciones</a>
+                            <a href="VistasNiveles/Secretaria/Agendar.php">Agendar, Confirmar y Etc. Atenciones</a>
+                        </div>
+                        <div id="OpPaciente" class="Paciente">
+                            <a href="VistasNiveles/Paciente/Atenciones.php">Mis Atenciones</a>
+                        </div>
+                    </center>
                 </div>
             </center>
-            <footer id="bottom">
-                <p>Diseño de aplicaciones web</p>
+            <footer class="bottom">
+                <p>Diseño de Aplicaciones para Internet</p>
             </footer>
         </div>
     </body>

@@ -80,12 +80,11 @@ class BaseDatos {
 
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `atencion` (
-      `N_SECUENCIAL` INT NOT NULL AUTO_INCREMENT,
+      `N_SECUENCIAL` INT(20) PRIMARY KEY AUTO_INCREMENT,
       `FECHA_ATENCION` DATE DEFAULT NULL,
       `RUT_PERSONA` INT(9) NOT NULL,
       `RUT_MEDICO` INT(9) NOT NULL,
-      `ESTADO` VARCHAR(20) DEFAULT NULL,
-      PRIMARY KEY (`N_SECUENCIAL`)
+      `ESTADO` VARCHAR(20) DEFAULT NULL
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8");
 
             $mysqlConexion->exec("

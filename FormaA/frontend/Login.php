@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="css/login.css" rel="stylesheet" type="text/css"/>
         <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
         <script src="js/jquery.Rut.js" type="text/javascript"></script>
         <script src="js/login.js" type="text/javascript"></script>
@@ -28,8 +28,8 @@
                 </form>
             </div>
             </center>
-            <footer id="bottom">
-                <p>Diseño de aplicaciones web</p>
+            <footer class="bottom">
+                <p>Diseño de Aplicaciones para Internet</p>
             </footer>
         </div>
     </body>

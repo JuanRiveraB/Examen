@@ -33,4 +33,23 @@ class MedicoDAO {
         }
         return $med;
     }
+    
+    public function buscarTodos() {
+        $listado = Array();
+
+        $registros = $this->conexion->query('SELECT * FROM `medico`');
+
+        $registros->execute();
+
+        while ($registro = $registros->fetch()) {
+            $med = new Medico();
+            $med->setRutMedico($registro["0"]);
+            $med->setNomMedico($registro["1"]);
+            $med->setFechaNac($registro["2"]);
+            $med->setEspecialidad($registro["3"]);
+            $med->setValorConsul($registro["4"]);
+            array_push($listado, $med->jsonSerialize());
+        }
+        return $listado;
+    }
 }

@@ -4,18 +4,17 @@
  *
  * @author Juan
  */
-include_once __DIR__ . "/controller/MedicoController.php";
+include_once __DIR__ . "/controller/AtencionController.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET["id"])) {
-        $json = MedicoController::buscarPorRut($_GET["id"]);
+        $json = AtencionController::buscarNumero($_GET["id"]);
         echo $json;
     } else {
-        $json = MedicoController::buscarTodos();
+        $json = AtencionController::bucarTodas();
         echo $json;
     }
 } else {
     echo "{\"error\": \"Error, solicite ayuda a soporte\"";
     exit();
 }
-

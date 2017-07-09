@@ -20,61 +20,103 @@
                             echo $_SESSION["personaNom"];
                         }
                         ?></label>
-                    <a href="../../php/Salir.php">Cerrar Sessión</a>
+                    <a class="Inicio" href="../../Inicio.php">Inicio</a>
+                    <a class="Salir" href="../../php/Salir.php">Cerrar Sessión</a>
                 </div>
             </header>
             <center>
                 <div id="contenedor" class="contenedor">
-                    <button onclick="agendar()">Agendar Nueva Atención</button>
-                    <button onclick="cEstado()">Cambiar Estado de Atención</button>
-                    <br/>
-                    <br/>
-                    <div id="Agendar">
-                        <form>
-                            <table border="1">
-                            <tbody>
-                                <tr>
-                                    <td>Fecha de Atencion:</td>
-                                    <td><input type="date" required=""/></td>
-                                </tr>
-                                <tr>
-                                    <td>Rut Persona:</td>
-                                    <td><input type="text" name="rutPaciente"/></td>
-                                </tr>
-                                <tr>
-                                    <td>Rut Medico:</td>
-                                    <td><input type="text" name="rutMedico"/></td>
-                                    <td><input type="text" name="nombre"/></td>
-                                    <td><input type="text" name="valor"/></td>
-                                </tr>
-                                <tr>
-                                    <td>Estado:</td>
-                                    <td>
-                                        <select name="sEstado" required="">
-                                            <option></option>
-                                            <option>agendada</option>
-                                            <option>confirmada</option>
-                                            <option>anulada</option>
-                                            <option>perdida</option>
-                                            <option>realizada</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><button>Agendar</button></td>
-                                    <td><input type="reset" alt="Limpiar"/></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </form>
-                    </div>
-                    <div id="cEstado">
-                        
-                    </div>
+                    <center>
+                        <button class="button" onclick="agendar()">Agendar Nueva Atención</button>
+                        <button class="button" onclick="cEstado()">Cambiar Estado de Atención</button>
+                        <br/>
+                        <br/>
+                        <div id="Agendar" class="Agendar">
+                            <form id="frmAgendar" method="POST" action="../../../backend/GuardarAtencion.php">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Fecha de Atencion:</td>
+                                            <td><input type="date" name="FechaAten" required=""/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rut Persona:</td>
+                                            <td><input id="rutP" type="text" name="rutPaciente" required=""/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medico:</td>
+                                            <td>
+                                                <select name="Medico" required="">
+                                                    <option value="">Seleccione un Medico</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estado:</td>
+                                            <td>
+                                                <select name="sEstado" required="">
+                                                    <option value="">Seleccione una opción</option>
+                                                    <option value="Agendada">Agendada</option>
+                                                    <option value="Confirmada">Confirmada</option>
+                                                    <option value="Anulada">Anulada</option>
+                                                    <option value="Perdida">Perdida</option>
+                                                    <option value="Realizada">Realizada</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="button2" onclick="quitarFormatoRutAgendar()">Agendar</button>
+                                <input class="buttonCancel" type="reset" value="Limpiar/Cancelar"/>
+                            </form>
+                        </div>
+                        <div id="cEstado" class="cEstado">
+                            <form id="frmCEstado" method="POST" action="../../../backend/CambiarAtencion.php">
+                                <h3>Buscar por Numero de Atención</h3>
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>N. Atención:</td>
+                                            <td><input type="text" name="NSecu" required=""/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rut Persona:</td>
+                                            <td><input id="rutP" type="text" name="rutPacienteCE" readonly=""/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fecha de Atencion:</td>
+                                            <td><input type="date" name="FechaAtenCE" readonly=""/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Rut Medico:</td>
+                                            <td><input type="text" name="rutMedicoCE" readonly=""/></td>
+                                            <td>Nombre Medico:</td>
+                                            <td><input type="text" name="MedicoCE" readonly=""/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Estado:</td>
+                                            <td>
+                                                <select name="sEstadoCE" required="">
+                                                    <option value="">Seleccione una opción</option>
+                                                    <option value="Agendada">Agendada</option>
+                                                    <option value="Confirmada">Confirmada</option>
+                                                    <option value="Anulada">Anulada</option>
+                                                    <option value="Perdida">Perdida</option>
+                                                    <option value="Realizada">Realizada</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <button class="button2" onclick="cambiarEstado()">Cambiar estado</button>
+                                <input class="buttonCancel" type="reset" value="Limpiar/Cancelar"/>
+                            </form>
+                        </div>
+                    </center>
                 </div>
             </center>
-            <footer id="bottom">
-                <p>Diseño de aplicaciones web</p>
+            <footer class="bottom">
+                <p>Diseño de Aplicaciones para Internet</p>
             </footer>
         </div>
     </body>

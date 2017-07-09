@@ -15,4 +15,11 @@ class MedicoController {
         $daoMedico = new MedicoDAO($conexion);        
         return json_encode($daoMedico->buscarRut($rut)->jsonSerialize());
     }
+    
+    public static function buscarTodos(){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoMedico = new MedicoDAO($conexion);        
+        return json_encode($daoMedico->buscarTodos());
+    }
 }

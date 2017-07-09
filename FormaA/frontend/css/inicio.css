@@ -7,9 +7,41 @@
     color:red;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 16em;
+}
+
+header
+{
+    font-family: cursive;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    background-color: #efefef;
+}
+
+.bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    background-color: #efefef;
+    text-align: center;
+}
+
 .contenedor {
+    position: relative;
+    top: 7rem;
     width: 65%;
-    overflow: auto;
     text-align: left;
 }
 
@@ -41,3 +73,96 @@
     display: none;
 }
 
+.button{
+    text-align: center;
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    outline: none;
+    background-color: rgb(228, 228, 228);
+    border: none;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0.5625rem #95a5a6;
+}
+
+.button:hover, .button2:hover{
+    color: white;
+    background-color: #2ecc71;
+    cursor: pointer;
+}
+
+.button:active, .button2:active {
+    background-color: #2ecc71;
+    box-shadow: 0 0.3125rem #95a5a6;
+    transform: translateY(0.25rem);
+}
+
+.button2{
+    padding: 0.5625rem 2.5rem;
+    outline: none;
+    background-color: rgb(228, 228, 228);
+    border: none;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0.5625rem #95a5a6;
+}
+
+.buttonCancel{
+    padding: 0.5625rem 2.5rem;
+    outline: none;
+    background-color: rgb(228, 228, 228);
+    border: none;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0.5625rem #95a5a6;
+}
+
+.buttonCancel:hover{
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+
+.buttonCancel:active{
+    background-color: red;
+    box-shadow: 0 0.3125rem #95a5a6;
+    transform: translateY(0.25rem);
+}
+
+a:link, a:visited, .Salir:link, .Salir:visited, .Inicio:link, .Inicio:visited {
+    background-color: white;
+    color: black;
+    border: 0.125rem solid lightskyblue;
+    padding: 0.625rem 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    display: inline-block;
+}
+
+a:hover, a:active, .Salir:hover, .Salir:active, .Inicio:hover, .Inicio:active  {
+    background-color: #ccc;
+    color: white;
+}
+
+.Salir{
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+}
+
+.Inicio{
+    position: absolute;
+    right: 13rem;
+    top: 0.8rem;
+}
+
+.table{
+    background-color: #efefef;
+    margin: 30px 10px 10px 10px;
+    width: 100%;
+    box-shadow: 0 0.0625rem 0.5625rem #95a5a6;
+}
+
+td, th{
+    text-align: left;
+    display: table-cell;
+    padding: 0.125rem 0.75rem;
+}

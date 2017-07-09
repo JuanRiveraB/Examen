@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/inicio.css" rel="stylesheet" type="text/css"/>
         <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
-        <link href="../../css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/login.css" rel="stylesheet" type="text/css"/>
         <title>Mis Atenciones</title>
     </head>
     <body>

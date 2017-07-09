@@ -7,6 +7,26 @@
     color:red;
 }
 
+header
+{
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+}
+
+.bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
+
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -28,7 +48,6 @@ input[type=text], input[type=password] {
 
 .contenedor {
     width: 65%;
-    overflow: auto;
     text-align: left;
 }
 
