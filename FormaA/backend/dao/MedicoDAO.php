@@ -52,4 +52,25 @@ class MedicoDAO {
         }
         return $listado;
     }
+    
+    //Metodo que devuelve una lista json
+    public function buscarRutMedicoJson($rut) {
+
+        $listado = Array();
+        $query = "SELECT * FROM MEDICO WHERE MEDICO_RUT = :rut";
+        $sentencia = $this->conexion->prepare($query);
+        $sentencia->bindParam(':rut', $rut);
+        $sentencia->execute();
+
+        while ($registro = $sentencia->fetch()) {
+            $med = new Medico();
+            $med->setRutMedico($registro["0"]);
+            $med->setNomMedico($registro["1"]);
+            $med->setFechaNac($registro["2"]);
+            $med->setEspecialidad($registro["3"]);
+            $med->setValorConsul($registro["4"]);
+            array_push($listado, $med->jsonSerialize());
+        }
+        return $listado;
+    }
 }
