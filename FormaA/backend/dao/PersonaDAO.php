@@ -88,7 +88,7 @@ class PersonaDAO {
     public function buscarTodosPacientes() {
         $listado = Array();
 
-        $registros = $this->conexion->query("SELECT * FROM PERSONA");
+        $registros = $this->conexion->query("SELECT * FROM PERSONA WHERE NIVEL = 'Paciente'");
 
         $registros->execute();
 
