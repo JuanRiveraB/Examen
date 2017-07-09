@@ -43,7 +43,7 @@
                             <a href="">Opciones Atenciones</a>
                         </div>
                         <div id="OpSecretaria" class="Secretaria">
-                            <a href="">Listar Pacientes</a>
+                            <a href="VistasNiveles/Secretaria/ListarPacientes.php">Listar Pacientes</a>
                             <a href="">Listar Médicos</a>
                             <a href="VistasNiveles/Secretaria/ListarAtenciones.php">Listar Atenciones</a>
                             <a href="VistasNiveles/Secretaria/Agendar.php">Agendar, Confirmar y Etc. Atenciones</a>

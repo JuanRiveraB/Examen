@@ -23,4 +23,18 @@ class PersonaController {
         $daoPersona = new PersonaDAO($conexion);        
         return $daoPersona->buscarRut($rut);
     }
+    
+    public static function buscarPorRutJson($rut){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoPersona = new PersonaDAO($conexion);        
+        return json_encode($daoPersona->buscarRutPacienteJson($rut));
+    }
+    
+    public static function buscarTodosPacientes(){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoPersona = new PersonaDAO($conexion);        
+        return json_encode($daoPersona->buscarTodosPacientes());
+    }
 }
