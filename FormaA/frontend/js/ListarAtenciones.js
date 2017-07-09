@@ -15,7 +15,10 @@ jQuery(document).ready(function () {
         }
     });
     jQuery("button[name='Listar']").click(function () {
+        mostrarImagenCargando();
+        var numero = jQuery("input[name='nAtencionL']").val();
         jQuery.getJSON("/Examen/FormaA/backend/infoAtencion.php",
+                {id: numero.toString().trim()},
                 function (Atenciones) {
                     //Html se ocupa para crear una tabla nueva
                     var html = '<table class ="table" >';
@@ -30,9 +33,43 @@ jQuery(document).ready(function () {
                     });
                     html += '</tbody></table>';
                     jQuery('div.listarAtenciones').html(html);
+                    ocultarImagenCargando();
+                });
+    });
+    
+    //Funcion que lista por el rut del paciente o numero que busque
+    jQuery("button[name='ListarAtenPacien']").click(function () {
+        mostrarImagenCargando();
+        var rut = document.getElementById("rutPer").value;
+        var numero = jQuery("input[name='nAtencionLP']").val();
+        jQuery.getJSON("/Examen/FormaA/backend/infoAtencionPersona.php",
+                {id: rut.toString().trim(), id2: numero.toString().trim()},
+                function (Atenciones) {
+                    //Html se ocupa para crear una tabla nueva
+                    var html = '<table class ="table" >';
+                    html += '<tbody>';
+                    html += '<tr><th>Numero Atención</th>';
+                    html += '<th>Fecha</th>';
+                    html += '<th>Rut Paciente</th>';
+                    html += '<th>Rut Medico</th>';
+                    html += '<th>Estado</th></tr>';
+                    jQuery.each(Atenciones, function (indice, Atencion) {
+                        html += '<tr><td>' + Atencion["nSecuencial"] + '</td><td>' + Atencion["fecAtencion"] + '</td><td>' + Atencion["rutPersona"] + '</td><td>' + Atencion["rutMedico"] + '</td><td>' + Atencion["estado"] + '</td></tr>';
+                    });
+                    html += '</tbody></table>';
+                    jQuery('div.listarAtencionesPersona').html(html);
+                    ocultarImagenCargando();
                 });
     });
 });
+
+function mostrarImagenCargando() {
+    jQuery("#cargandoAjax").css("visibility", "visible");
+}
+
+function ocultarImagenCargando() {
+    jQuery("#cargandoAjax").css("visibility", "hidden");
+}
 
 function genera_tabla() {
     // Obtener la referencia del elemento body

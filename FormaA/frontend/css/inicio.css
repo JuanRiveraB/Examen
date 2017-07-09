@@ -7,14 +7,25 @@
     color:red;
 }
 
+#cargandoAjax {
+    position:absolute;
+    left: 50%;
+    bottom: 50%;
+    visibility:hidden;
+}
+
+#cargandoAjax img {
+    width: 32px;
+}
+
 html {
-  min-height: 100%;
-  position: relative;
+    min-height: 100%;
+    position: relative;
 }
 
 body {
-  margin: 0;
-  margin-bottom: 16em;
+    margin: 0;
+    margin-bottom: 16em;
 }
 
 header
@@ -130,10 +141,10 @@ a:link, a:visited, .Salir:link, .Salir:visited, .Inicio:link, .Inicio:visited {
     background-color: white;
     color: black;
     border: 0.125rem solid lightskyblue;
+    border-radius: 0.3125rem;
     padding: 0.625rem 1.25rem;
     text-align: center;
     text-decoration: none;
-    margin: 0;
     display: inline-block;
 }
 
@@ -143,12 +154,17 @@ a:hover, a:active, .Salir:hover, .Salir:active, .Inicio:hover, .Inicio:active  {
 }
 
 .Salir{
+    border-radius: 0.3125rem;
     position: absolute;
+    margin: 0px;
     right: 0.8rem;
     top: 0.8rem;
 }
 
 .Inicio{
+    border-radius: 0.3125rem;
+    padding: 0.300rem 1rem;
+    margin: 0px;
     position: absolute;
     right: 13rem;
     top: 0.8rem;

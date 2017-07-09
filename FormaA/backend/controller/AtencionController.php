@@ -27,7 +27,21 @@ class AtencionController {
         
         $conexion = BaseDatos::getConexion();
         $daoAtencion = new AtencionDAO($conexion);        
-        return json_encode($daoAtencion->buscarNumero($numeroUnico)->jsonSerialize());
+        return json_encode($daoAtencion->buscarNumero($numeroUnico));
+    }
+    
+    public static function buscarPorRut($rut){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoAtencion = new AtencionDAO($conexion);        
+        return json_encode($daoAtencion->buscarRut($rut));
+    }
+    
+    public static function buscarPorNumeroRut($rut, $numero){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoAtencion = new AtencionDAO($conexion);        
+        return json_encode($daoAtencion->buscarNumeroRut($rut, $numero));
     }
     
     public static function  bucarTodas(){

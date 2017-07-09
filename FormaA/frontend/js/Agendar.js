@@ -27,6 +27,7 @@ jQuery(document).ready(function () {
         jQuery.getJSON("/Examen/FormaA/backend/infoAtencion.php",
                 {id: this.value},
                 function (atencion) {
+                    mostrarImagenCargando();
                     jQuery("input[name='rutPacienteCE']").val(atencion.rutPersona);
                     jQuery("input[name='rutPacienteCE']").attr("readonly", true);
                     jQuery("input[name='FechaAtenCE']").val(atencion.fecAtencion);
@@ -39,9 +40,19 @@ jQuery(document).ready(function () {
                                 jQuery("input[name='MedicoCE']").val(medico.nomMedico);
                                 jQuery("input[name='MedicoCE']").attr("readonly", true);
                             });
+                    ocultarImagenCargando();
                 });
+
     });
 });
+
+function mostrarImagenCargando() {
+    jQuery("#cargandoAjax").css("visibility", "visible");
+}
+
+function ocultarImagenCargando() {
+    jQuery("#cargandoAjax").css("visibility", "hidden");
+}
 
 function validarRutPaciente() {
     var rut = jQuery("input[name='rutPaciente']").val();

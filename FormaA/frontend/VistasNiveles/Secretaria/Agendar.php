@@ -8,16 +8,19 @@
         <script src="../../js/jquery-3.2.1.js" type="text/javascript"></script>
         <script src="../../js/jquery.Rut.js" type="text/javascript"></script>
         <script src="../../js/Agendar.js" type="text/javascript"></script>
-        <title>Mis Atenciones</title>
+        <title>Agendar</title>
     </head>
     <body>
         <div id="contenido">
+            <div id="cargandoAjax">
+                <img src="../../img/ajax-loader.gif" alt="cargando..."/>
+            </div>
             <header id="top">
                 <div id="Perfil">
                     Bienvenido/a: <label id="nomPer">
                         <?php
-                        if (isset($_SESSION["personaNom"])) {
-                            echo $_SESSION["personaNom"];
+                        if (isset($_SESSION["personaNom"]) && isset($_SESSION["nivel"])) {
+                            echo $_SESSION["personaNom"].', '.$_SESSION["nivel"];
                         }
                         ?></label>
                     <a class="Inicio" href="../../Inicio.php">Inicio</a>

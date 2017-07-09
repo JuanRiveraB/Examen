@@ -5,6 +5,7 @@ include_once __DIR__ . "/domain/Persona.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (isset($_POST["rut"]) && isset($_POST["pass"])) {
+        //Codigo a validar de login
         $persona = new Persona();
         $rut = $_POST["rut"];
         $pass = hash('sha256', $_POST['pass']);
@@ -18,8 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             header("Location: ../frontend/Inicio.php");
             //echo json_encode($persona->jsonSerialize());
         } else {
-            //si no existe se va a login.php
+            //si no existe se va a login.php con link de error
             header("Location: ../frontend/Login.php?errorusuario=si");
         }
+    } else if (isset($_POST["registroRut"]) && isset($_POST["registroNombre"])) {
+        //Codigo a registrar
     }
 }

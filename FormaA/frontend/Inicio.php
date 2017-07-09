@@ -15,8 +15,8 @@
                 <div id="Perfil">
                     Bienvenido/a: <label id="nomPer">
                         <?php
-                        if (isset($_SESSION["personaNom"])) {
-                            echo $_SESSION["personaNom"];
+                        if (isset($_SESSION["personaNom"]) && isset($_SESSION["nivel"])) {
+                            echo $_SESSION["personaNom"].', '.$_SESSION["nivel"];
                         }
                         ?></label>
                     <input id="nivel" class="nvl" value="

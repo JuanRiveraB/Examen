@@ -38,20 +38,61 @@ class AtencionDAO {
         return $sentencia->execute();
     }
     public function buscarNumero($numero) {
-        $aten = new Atencion();
+        $listado = Array();
         $query = 'SELECT * FROM ATENCION WHERE N_SECUENCIAL = :numero';
         $sentencia = $this->conexion->prepare($query);
         $sentencia->bindParam(':numero', $numero);
         $sentencia->execute();
 
         while ($registro = $sentencia->fetch()) {
+            $aten = new Atencion();
             $aten->setNSecuencial($registro["0"]);
             $aten->setFechaAtencion($registro["1"]);
             $aten->setRutPersona($registro["2"]);
             $aten->setRutMedico($registro["3"]);
             $aten->setEstado($registro["4"]);
+            array_push($listado, $aten->jsonSerialize());
         }
-        return $aten;
+        return $listado;
+    }
+    
+    public function buscarRut($rut) {
+        $listado = Array();
+        $query = 'SELECT * FROM ATENCION WHERE RUT_PERSONA = :rut';
+        $sentencia = $this->conexion->prepare($query);
+        $sentencia->bindParam(':rut', $rut);
+        $sentencia->execute();
+
+        while ($registro = $sentencia->fetch()) {
+            $aten = new Atencion();
+            $aten->setNSecuencial($registro["0"]);
+            $aten->setFechaAtencion($registro["1"]);
+            $aten->setRutPersona($registro["2"]);
+            $aten->setRutMedico($registro["3"]);
+            $aten->setEstado($registro["4"]);
+            array_push($listado, $aten->jsonSerialize());
+        }
+        return $listado;
+    }
+    
+    public function buscarNumeroRut($rut, $numero) {
+        $listado = Array();
+        $query = 'SELECT * FROM ATENCION WHERE N_SECUENCIAL = :numero AND RUT_PERSONA = :rut';
+        $sentencia = $this->conexion->prepare($query);
+        $sentencia->bindParam(':numero', $numero);
+        $sentencia->bindParam(':rut', $rut);
+        $sentencia->execute();
+
+        while ($registro = $sentencia->fetch()) {
+            $aten = new Atencion();
+            $aten->setNSecuencial($registro["0"]);
+            $aten->setFechaAtencion($registro["1"]);
+            $aten->setRutPersona($registro["2"]);
+            $aten->setRutMedico($registro["3"]);
+            $aten->setEstado($registro["4"]);
+            array_push($listado, $aten->jsonSerialize());
+        }
+        return $listado;
     }
     
     public function buscarTodos() {

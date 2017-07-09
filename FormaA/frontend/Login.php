@@ -24,7 +24,8 @@
                     <input type="text" placeholder="Ingrese Rut" id="rut" name="rut" required>
                     <label><b>Contraseña</b></label>
                     <input type="password" placeholder="Ingrese Contraseña" name="pass" required>
-                    <button class="botonSesion" type="button" onclick="quitarFormatoRut()">Iniciar Sesión</button>
+                    <button class="botonSesion" onclick="quitarFormatoRut()">Iniciar Sesión</button>
+                    <button class="botonSesion2" onclick="registrar()">Registrate</button>
                 </form>
             </div>
             </center>

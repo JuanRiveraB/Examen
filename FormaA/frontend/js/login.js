@@ -27,8 +27,12 @@ function validarRut() {
     return jQuery.Rut.validar(rut);
 }
 
+function registrar() {
+    window.location.href = 'Registrar.php';
+}
+
 function volver() {
-    window.location.href = 'formulario.php';
+    window.location.href = 'Login.php';
 }
 
 
