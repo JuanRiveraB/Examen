@@ -59,6 +59,9 @@ class BaseDatos {
             $mysqlConexion->exec("
     INSERT INTO `persona` (`PERSONA_RUT`, `PERSONA_NOMCOMPLETO`, `FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
     (123456785, 'Juan Perez', '1980-04-28', 'Masculino', 'U2FudGlhZ28=', 978464247, 'Paciente' , 'cGFzcw==')");
+             $mysqlConexion->exec("
+    INSERT INTO `persona` (`PERSONA_RUT`, `PERSONA_NOMCOMPLETO`, `FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
+    (11, 'María Pavez', '1980-04-28', 'Femenino', 'U2FudGlhZ28=', 978464247, 'Paciente' , 'cGFzcw==')");
             
             $mysqlConexion->exec("
     INSERT INTO `persona` (`PERSONA_RUT`, `PERSONA_NOMCOMPLETO`, `FECHA_NACIMIENTO`, `SEXO`, `DIRECCION`, `TELEFONO`, `NIVEL`, `CONTRASENA`) VALUES
