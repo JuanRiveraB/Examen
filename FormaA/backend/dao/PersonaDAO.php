@@ -106,5 +106,21 @@ class PersonaDAO {
         }
         return $listado;
     }
+    
+    public function ingresarPasiente($rut, $nombre, $fecha, $sexo, $direccion, $telefono, $contraseña) {
+        
+        $query = "INSERT INTO PERSONA (PERSONA_RUT, PERSONA_NOMCOMPLETO, FECHA_NACIMIENTO, SEXO, DIRECCION, TELEFONO, NIVEL, CONTRASENA) VALUES (:fecha, :rutP, :rutM, :estado)";
+        $sentencia = $this->conexion->prepare($query);
+        $sentencia->bindParam(':rutP', $rut);
+        $sentencia->bindParam(':nombreP', $nombre);
+        $sentencia->bindParam(':fechaP', $fecha);
+        $sentencia->bindParam(':sexoP', $sexo);
+        $sentencia->bindParam(':direccionP', $direccion);
+        $sentencia->bindParam(':telefonoP', $telefono);
+        //$sentencia->bindParam(':nivelP', $nivel);
+        $sentencia->bindParam(':contrasena', $contraseña);
+        
+        return $sentencia->execute();
+    }
 
 }

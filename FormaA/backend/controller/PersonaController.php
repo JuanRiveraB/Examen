@@ -37,4 +37,11 @@ class PersonaController {
         $daoPersona = new PersonaDAO($conexion);        
         return json_encode($daoPersona->buscarTodosPacientes());
     }
+    
+    public static function ingresarPasiente($rut, $nombre, $fecha, $sexo, $direccion, $telefono, $contraseña){
+        
+        $conexion = BaseDatos::getConexion();
+        $daoPersona = new PersonaDAO($conexion);        
+        return $daoPersona->ingresarPasiente($rut, $nombre, $fecha, $sexo, $direccion, $telefono, $contraseña);
+    }
 }

@@ -26,5 +26,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     } else if (isset($_POST["registroRut"]) && isset($_POST["registroNombre"])) {
         //Codigo a registrar
+        
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["registroRut"]) && isset($_POST["registroNombre"]) && isset($_POST["registroFecha"]) && isset($_POST["registroSexo"])&& isset($_POST["registroDireccion"])&& isset($_POST["registroTelefono"])&& isset($_POST["regitroContraseña"])) {
+
+        $exito = PersonaController::ingresarPasiente($_POST["registroRut"], $_POST["registroNombre"], $_POST["registroFecha"], $_POST["registroSexo"], $_POST["registroDireccion"], $_POST["registroTelefono"], $_POST["regitroContraseña"]);
+        if ($exito) {
+            header("Location: ../frontend/Login.php?Ingresado");
+            echo '<script type="text/javascript">alert("Paciente registrado");</script>';
+            exit();
+        }
+        header("Location: ../frontend/Login.php?Error");
+        exit();
+    }else{
+        header("Location: ../frontend/Login.php?Error");
+        exit();
     }
+    }
+  }
 }

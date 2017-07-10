@@ -7,6 +7,7 @@
         <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
         <script src="js/jquery.Rut.js" type="text/javascript"></script>
         <script src="js/login.js" type="text/javascript"></script>
+        <script src="../../js/Registrar.js" type="text/javascript"></script>
         <title>Registro</title>
     </head>
     <body>
@@ -39,7 +40,7 @@
                         Confirmar Contraseña: <input type="password" name="confirmContraseña" required=""/>
                         <br/>
                         <input class="nvl" name="registroNivel" value="Paciente"/>
-                        <button class="botonSesion" onclick="">Registrarse</button>
+                        <button class="botonSesion" onclick="comprobarClave()">Registrarse</button>
                         <button class="botonSesion2" onclick="volver()">Volver</button>
                     </form>
                 </div>
