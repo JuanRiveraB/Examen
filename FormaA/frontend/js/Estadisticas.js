@@ -17,6 +17,7 @@ jQuery(document).ready(function () {
         }
     });
     jQuery("button[name='btngenerar3']").click(function () {
+        jQuery('div.especalidad').show();
         mostrarImagenCargando();
         jQuery.getJSON("/Examen/FormaA/backend/EstadisticaPorFecha.php",
                 function (estadistica3) {
@@ -31,10 +32,13 @@ jQuery(document).ready(function () {
                     });
                     html += '</tbody></table>';
                     jQuery('div.especalidad').html(html);
+                    jQuery('div.medico').hide();
+                    jQuery('div.estado').hide();
                     ocultarImagenCargando();
                 });
     });
     jQuery("button[name='btngenerar4']").click(function () {
+        jQuery('div.medico').show();
         mostrarImagenCargando();
         jQuery.getJSON("/Examen/FormaA/backend/EstaditicasPorMedico.php",
                 function (estadistica4) {
@@ -49,10 +53,13 @@ jQuery(document).ready(function () {
                     });
                     html += '</tbody></table>';
                     jQuery('div.medico').html(html);
+                    jQuery('div.especalidad').hide();
+                    jQuery('div.estado').hide();
                     ocultarImagenCargando();
                 });
     });
     jQuery("button[name='btngenerar5']").click(function () {
+        jQuery('div.estado').show();
         mostrarImagenCargando();
         jQuery.getJSON("/Examen/FormaA/backend/EstadisticasPorEstado.php",
                 function (estadistica5) {
@@ -67,6 +74,8 @@ jQuery(document).ready(function () {
                     });
                     html += '</tbody></table>';
                     jQuery('div.estado').html(html);
+                    jQuery('div.especalidad').hide();
+                    jQuery('div.medico').hide();
                     ocultarImagenCargando();
                 });
     });
