@@ -113,4 +113,71 @@ class AtencionDAO {
         }
         return $listado;
     }
+    public function buscarporFecha($fecha1,$fecha2)
+    {
+        $listado= Array();
+        $query=('SELECT count(*),SUM(VALOR_CONSULTA) from atencion join medico on (RUT_MEDICO=Medico_rut) WHERE FECHA_ATENCION BETWEEN :fecha1 and :fecha2');
+        $sentencia = $this->conexion->prepare($query);
+        $sentencia->bindParam(':fecha1', $fecha1);
+        $sentencia->bindParam(':fecha2', $fecha2);
+        $sentencia->execute();
+        while($registro = $sentencia->fetch())
+        {
+            $listado[0] = $registro["0"];
+            $listado[1] = $registro["1"];
+        }
+        return $listado;
+    }
+    public function estatEspecialidad()
+    {
+        $listado = Array();
+        $aux= array();
+
+        $registros = $this->conexion->query('SELECT especialidad,count(*),SUM(VALOR_CONSULTA) from atencion join medico on (RUT_MEDICO=Medico_rut)group by especialidad');
+
+        $registros->execute();
+        while($registro = $registros->fetch())
+        {
+            $aux[0] = $registro[0];
+            $aux[1] = $registro[1];
+            $aux[2] = $registro[2];
+            array_push($listado, $aux);
+        }
+        return $listado;
+    }
+    public function estatMedico()
+    {
+        $listado = Array();
+        $aux= array();
+
+        $registros = $this->conexion->query('SELECT MEDICO_NOMCOMPLETO,count(*),SUM(VALOR_CONSULTA) from atencion join medico on (RUT_MEDICO=Medico_rut)group by MEDICO_NOMCOMPLETO');
+
+        $registros->execute();
+        while($registro = $registros->fetch())
+        {
+            $aux[0] = $registro[0];
+            $aux[1] = $registro[1];
+            $aux[2] = $registro[2];
+            array_push($listado, $aux);
+        }
+        return $listado;
+    }
+    public function estatEstado()
+    {
+        $listado = Array();
+        $aux= array();
+
+        $registros = $this->conexion->query('SELECT estado,count(*),SUM(VALOR_CONSULTA)from atencion join medico on (RUT_MEDICO=Medico_rut)group by estado');
+
+        $registros->execute();
+        while($registro = $registros->fetch())
+        {
+            $aux[0] = $registro[0];
+            $aux[1] = $registro[1];
+            $aux[2] = $registro[2];
+            array_push($listado, $aux);
+        }
+        return $listado;
+    }
+            
 }

@@ -49,4 +49,28 @@ class AtencionController {
         $daoAtencion = new AtencionDAO($conexion);        
         return json_encode($daoAtencion->buscarTodos());
     }
+    public static function buscarporFecha($fecha1,$fecha2)
+    {
+        $conexion = BaseDatos::getConexion();
+        $daoAtencion = new AtencionDAO($conexion);        
+        return json_encode($daoAtencion->buscarporFecha($fecha1,$fecha2));
+    }
+    public static function estatEspecialidad()
+    {
+        $conexion = BaseDatos::getConexion();
+        $daoAtencion = new AtencionDAO($conexion);        
+        return json_encode($daoAtencion->estatEspecialidad());
+    }
+    public static function estatMedico()
+    {
+        $conexion = BaseDatos::getConexion();
+        $daoAtencion = new AtencionDAO($conexion);        
+        return json_encode($daoAtencion->estatMedico());
+    }
+    public static function estatEstado()
+    {
+        $conexion = BaseDatos::getConexion();
+        $daoAtencion = new AtencionDAO($conexion);        
+        return json_encode($daoAtencion->estatEstado());
+    }
 }

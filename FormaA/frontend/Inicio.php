@@ -41,7 +41,7 @@
                             <a href="VistasNiveles/Director/ListarPacientes.php">Listar y Consultar Pacientes</a>
                             <a href="VistasNiveles/Director/ListarMedicos.php">Listar y Consultar Médicos</a>
                             <a href="VistasNiveles/Director/ListarAtenciones.php">Listar y Consultar Atenciones</a>
-                            <a href="">Estadisticas</a>
+                            <a href="VistasNiveles/Director/Estadisticas.php">Estadisticas</a>
                         </div>
                         <div id="OpSecretaria" class="Secretaria">
                             <a href="VistasNiveles/Secretaria/ListarPacientes.php">Listar Pacientes</a>
