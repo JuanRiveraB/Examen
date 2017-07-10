@@ -81,6 +81,9 @@ class BaseDatos {
             $mysqlConexion->exec("
     INSERT INTO `medico` (`MEDICO_RUT`, `MEDICO_NOMCOMPLETO`, `MEDICO_FECHA_NACIMIENTO`, `ESPECIALIDAD`, `VALOR_CONSULTA`) VALUES
     (109724041, 'Yolanda Cortina Vilalta', '1987-06-15', 'Medicina General', 40000)");
+            $mysqlConexion->exec("
+    INSERT INTO `medico` (`MEDICO_RUT`, `MEDICO_NOMCOMPLETO`, `MEDICO_FECHA_NACIMIENTO`, `ESPECIALIDAD`, `VALOR_CONSULTA`) VALUES
+    (99415665, 'Jose Sanchez', '1987-06-15', 'Pediatria', 30000)");
 
             $mysqlConexion->exec("
     CREATE TABLE IF NOT EXISTS `atencion` (
@@ -100,7 +103,14 @@ class BaseDatos {
             
             $mysqlConexion->exec("
     INSERT INTO `atencion` (`FECHA_ATENCION`, `RUT_PERSONA`, `RUT_MEDICO`, `ESTADO`) VALUES 
-    ('2017-08-24', '123456785', '109724041', 'Agendado'), ('2017-07-11', '123456785', '109724041', 'Agendado') "); 
+    ('2017-08-24', '123456785', '99415665', 'Agendado'), ('2017-07-11', '123456785', '109724041', 'Agendado') "); 
+            $mysqlConexion->exec("
+    INSERT INTO `atencion` (`FECHA_ATENCION`, `RUT_PERSONA`, `RUT_MEDICO`, `ESTADO`) VALUES 
+    ('2017-09-24', '123456785', '99415665', 'Agendado'), ('2017-07-11', '123456785', '109724041', 'Confirmada') "); 
+            $mysqlConexion->exec("
+    INSERT INTO `atencion` (`FECHA_ATENCION`, `RUT_PERSONA`, `RUT_MEDICO`, `ESTADO`) VALUES 
+    ('2017-09-24', '123456785', '109724041', 'Agendado'), ('2017-07-11', '99415665', '109724041', 'Realizada') "); 
+            
 
             
 
